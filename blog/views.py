@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
 from .forms import PostForm
+from django.http import HttpResponse
 
 
 
@@ -45,3 +46,8 @@ def post_edit(request, pk):
   else:
       form = PostForm(instance=post)
   return render(request, 'blog/post_edit.html', {'form': form})
+
+
+def firstviewfunction(request):
+  print(dir(request))
+  return HttpResponse('RESPONSED')
