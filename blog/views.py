@@ -19,7 +19,7 @@ def post_detail(request, pk):
 
 
 def post_new(request):
-  if request.method == 'POST': ##　NEW: When form is requested
+  if request.method == 'POST': ## NEW: When form is requested
     form = PostForm(request.POST)
     if form.is_valid():
       post = form.save(commit=False)
