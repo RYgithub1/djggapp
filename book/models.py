@@ -1,6 +1,7 @@
 from django.db import models
 
 
+
 CHOICES = (('bbc','BBC'),('cnn','CNN'),('dw','DW'),('nhk','NHK')) # TUPLE
 class Book(models.Model):
   title = models.CharField(max_length=100)
@@ -21,3 +22,7 @@ class Book(models.Model):
     self.company = 'ANONYMOUS'
     '''
     super(Book, self).save(*args, **kwargs) # SAVE button happens this save method.
+
+
+class FileUpload(models.Model):
+  files = models.FileField()
