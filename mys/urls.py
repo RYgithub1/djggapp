@@ -24,7 +24,7 @@ urlpatterns = [
     path('adminadmin/', admin.site.urls),
 
     path('', include('blog.urls')),
-    path('book', include('book.urls')),
+    path('book/', include('book.urls')),
 ]
 
 # Likewise path, tell the url for rooting, and storage the date in the media directory.
