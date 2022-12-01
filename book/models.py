@@ -23,6 +23,9 @@ class Book(models.Model):
     '''
     super(Book, self).save(*args, **kwargs) # SAVE button happens this save method.
 
+  def get_absorute_url(self):
+    return '/detail/%i' % self.id
+
 
 class FileUpload(models.Model):
   files = models.FileField()

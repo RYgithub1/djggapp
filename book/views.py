@@ -1,6 +1,6 @@
 from django.http import HttpResponse
-from .models import FileUpload
-from django.shortcuts import get_object_or_404
+from .models import FileUpload, Book
+from django.shortcuts import get_object_or_404, render
 import mimetypes
 import shutil
 
@@ -20,3 +20,8 @@ def downloadview(request, pk):
   shutil.copyfileobj(file, response)
   # return None
   return response
+
+
+def detailview(request, pk):
+  object = get_object_or_404(Book, pk=pk)
+  return render(request, 'book/detail.html', {'object':object})
