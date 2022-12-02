@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 
@@ -24,7 +25,8 @@ class Book(models.Model):
     super(Book, self).save(*args, **kwargs) # SAVE button happens this save method.
 
   def get_absorute_url(self):
-    return '/detail/%i' % self.id
+    # return '/detail/%i' % self.id
+    return reverse('detail', args=[(self.id)])
 
 
 class FileUpload(models.Model):
