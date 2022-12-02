@@ -3,6 +3,7 @@ from .models import FileUpload, Book
 from django.shortcuts import get_object_or_404, render
 import mimetypes
 import shutil
+from django.core.paginator import Paginator
 
 
 
@@ -25,3 +26,11 @@ def downloadview(request, pk):
 def detailview(request, pk):
   object = get_object_or_404(Book, pk=pk)
   return render(request, 'book/detail.html', {'object':object})
+
+
+def indexview(request):
+  object_list =Book.objects.all()
+  paginator = Paginator(object_list, 4)
+  page = request.GET.get('page', 1)
+  paginated_list = paginator.page(page)
+  return render(request, 'book/index.html', {'paginated_list':paginated_list})
