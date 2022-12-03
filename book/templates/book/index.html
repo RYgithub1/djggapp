@@ -6,3 +6,10 @@
   {{ item.text }}
   <br><br><hr><br>
 {% endfor %}
+
+
+{% if paginated_list.has_other_pages %}
+  {% for i in paginated_list.paginator.page_range %}
+    <a href='?page={{i}}'>{{i}}</a>
+  {% endfor %}
+{% endif %}
