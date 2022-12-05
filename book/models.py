@@ -25,8 +25,14 @@ class Book(models.Model):
     super(Book, self).save(*args, **kwargs) # SAVE button happens this save method.
 
   def get_absorute_url(self):
-    # return '/detail/%i' % self.id
-    return reverse('detail', args=[(self.id)])
+    ## FOR ABSOLUTE PATH
+    # return '/detail/%i' % self.id   ## %i=pk number.
+    # return reverse('detail', args=[(self.id)])
+    ## FOR REDIRECT TEST
+    return '/admin/'
+    # return '/book/page/'
+    # return ''
+
 
 
 class FileUpload(models.Model):
