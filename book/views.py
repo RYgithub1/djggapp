@@ -39,3 +39,12 @@ def indexview(request):
 def redirectview(request, pk):
   object = Book.objects.get(pk=pk)
   return redirect(object)
+
+
+def listview(request):
+  object_list =Book.objects.all()
+  return render(request, 'book/list.html', {'object_list':object_list})
+
+
+def redirectview1(request):
+  return redirect('list')
