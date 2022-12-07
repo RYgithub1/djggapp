@@ -47,4 +47,6 @@ def listview(request):
 
 
 def redirectview1(request):
-  return redirect('list')
+  # return redirect('/redirected/')
+  # return redirect('list') ## URL: /listredirect -> redirected
+  return redirect('https://google.com') ## URL: /listredirect -> google
