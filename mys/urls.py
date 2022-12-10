@@ -26,7 +26,7 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('book/', include('book.urls')),
 
-    path('flatpage/', include('django.contrib.flatpages.urls')), ## Indicate url of flatpage.
+    path('flatpage/', include('django.contrib.flatpages.urls')), ## Envoke urls of flatpages.
 ]
 
 # Likewise path, tell the url for rooting, and storage the date in the media directory.
