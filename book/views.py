@@ -50,3 +50,12 @@ def redirectview1(request):
   # return redirect('/redirected/')
   # return redirect('list') ## URL: /listredirect -> redirected
   return redirect('https://google.com') ## URL: /listredirect -> google
+
+
+def search(request):
+  # Search: (1)Auto display. (2)Button clicked display.
+  if request.method == 'POST':
+    query = request.POST.get('abc')
+    print(query)
+    return render(request, 'book/search.html', {})
+  return render(request, 'book/search.html', {})
