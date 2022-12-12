@@ -55,7 +55,8 @@ def redirectview1(request):
 def search(request):
   # Search: (1)Auto display. (2)Button clicked display.
   if request.method == 'POST':
-    query = request.POST.get('abc')
-    print(query)
-    return render(request, 'book/search.html', {})
+    query = request.POST.get('abc') # Get the searched data with the abc key.
+    # print(query)
+    object_list = Book.objects.filter(content__icontains=query)
+    return render(request, 'book/search.html', {'list':object_list})
   return render(request, 'book/search.html', {})
