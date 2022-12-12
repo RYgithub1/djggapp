@@ -3,3 +3,10 @@
   <input type='text' name='abc'> {# Use GET METHOD by using this abc key #}
   <button type='submit'>SEND</button>
 </form>
+
+{% for query in object_list %}
+  <hr>
+  <p><b>AUTHOR:</b> {{ query.author }}</p>
+  <p><b>TITILE:</b> {{ query.title }}</p>
+{% endfor %}
+<hr>
