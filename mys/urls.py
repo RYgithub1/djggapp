@@ -26,7 +26,11 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('book/', include('book.urls')),
 
-    path('flatpage/', include('django.contrib.flatpages.urls')), ## Envoke urls of flatpages.
+    ## Model data to a multiple html pages with urls/template without views function. Ex: Pages of Privacy/Contact/Invenstment.
+    path('flatpage/', include('django.contrib.flatpages.urls')),
+    ## Envoke urls of flatpages.
+    ### (1)BASE_URL/flatpage/privacy/
+    ### (2)BASE_URL/flatpage/sustainability/
 ]
 
 # Likewise path, tell the url for rooting, and storage the date in the media directory.

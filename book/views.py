@@ -56,9 +56,6 @@ def search(request):
   # Search: (1)Auto display. (2)Button clicked display.
   if request.method == 'POST':
     query = request.POST.get('abc') # Get the searched data with the abc key.
-    print(query)
     object_list = Book.objects.filter(text__icontains=query)
-    print(object_list)
-    print('tttttttt')
     return render(request, 'book/search.html', {'object_list':object_list})
   return render(request, 'book/search.html', {})
