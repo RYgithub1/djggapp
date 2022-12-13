@@ -19,3 +19,8 @@
 ##### Pagination.
 ##### Flatpages.
 ##### Search.
+
+
+---
+Copyright (c) 2022 RYgithub1  
+This software is released under the MIT License, see LICENSE.txt.
