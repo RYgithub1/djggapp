@@ -31,9 +31,6 @@ urlpatterns = [
     ## Envoke urls of flatpages.
     ### (1)BASE_URL/flatpage/privacy/
     ### (2)BASE_URL/flatpage/sustainability/
-
-    path('hellowworld/', helloworldfunction),
-
 ]
 
 # Likewise path, tell the url for rooting, and storage the date in the media directory.
