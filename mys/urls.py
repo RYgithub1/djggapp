@@ -23,8 +23,12 @@ from django.urls import path, include
 urlpatterns = [
     path('adminadmin/', admin.site.urls),
 
+    ## BLOG APP
     path('', include('blog.urls')),
+    ## BOOK APP
     path('book/', include('book.urls')),
+    ## HELLOWORLD APP
+    path('helloworld/', include('helloworld.urls')),
 
     ## Model data to a multiple html pages with urls/template without views function. Ex: Pages of Privacy/Contact/Invenstment.
     path('flatpage/', include('django.contrib.flatpages.urls')),

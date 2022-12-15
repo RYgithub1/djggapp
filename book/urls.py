@@ -16,6 +16,4 @@ urlpatterns = [
     path('listredirect/', views.redirectview1, name='redirectview1'),
 
     path('search/', views.search, name='search'),
-
-    path('helloworld/', views.helloworldfunction),
 ]
