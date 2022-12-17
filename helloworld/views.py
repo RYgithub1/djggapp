@@ -11,3 +11,7 @@ def helloworldfunction(request):
 
 class HelloWorldClass(TemplateView):
   template_name = 'helloworld/hello.html'
+
+
+def helloworldappview(request):
+  return HttpResponse('APP IS CALLED.')
