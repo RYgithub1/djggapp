@@ -20,6 +20,10 @@
 * Flatpages.
 * Search.
 
+### *APP2:* HELLOWORLD
+* Function-based view and Class-based view.
+
+
 ---
 Copyright (c) 2022 RYgithub1  
 This software is released under the MIT License, see LICENSE.txt.
