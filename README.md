@@ -20,8 +20,11 @@
 * Flatpages.
 * Search.
 
-### *APP2:* HELLOWORLD
+### *APP3:* HELLOWORLD
 * Function-based view and Class-based view.
+
+### *DIR4:* ALGORITHM
+* Sort
 
 
 ---
