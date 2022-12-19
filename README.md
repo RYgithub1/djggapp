@@ -24,7 +24,7 @@
 * Function-based view and Class-based view.
 
 ### *DIR4:* ALGORITHM
-* Sort
+* Sort and Search.
 
 
 ---
