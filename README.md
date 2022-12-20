@@ -23,8 +23,9 @@
 ### *APP3:* HELLOWORLD
 * Function-based view and Class-based view.
 
-### *DIR4:* ALGORITHM
+### *DIR4:* ALGORITHM and DATA STRUCTURE
 * Sort and Search.
+* Linked List: Module>Class>Method, Constructor, Pointer, Append/Insert/Remove.
 
 
 ---
