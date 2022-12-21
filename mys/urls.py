@@ -29,6 +29,8 @@ urlpatterns = [
     path('book/', include('book.urls')),
     ## HELLOWORLD APP
     path('helloworld/', include('helloworld.urls')),
+    ## TODo APP
+    path('todo/', include('todo.urls')),
 
     ## Model data to a multiple html pages with urls/template without views function. Ex: Pages of Privacy/Contact/Invenstment.
     path('flatpage/', include('django.contrib.flatpages.urls')),
