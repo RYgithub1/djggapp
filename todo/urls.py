@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 
+
 urlpatterns = [
-    path('', views.todo_list, name='todo_list'),
+    path('', views.TodoList.as_view(), name='TodoList'), # CLASS -> as_view()
 ]
