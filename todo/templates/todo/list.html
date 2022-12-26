@@ -3,18 +3,24 @@
 
 
 {% block header %}
-  <div class="alert alert-dark" role="alert">
-    LIST >>
+  <div class="container-fluid py-5 alert alert-dark" role="alert">
+    <h1 class="display-5 fw-bold">TODOLIST</h1>
+    <p class="col-md-8 fs-4">Using Todo List, Spend efficient life.
+    <button class="btn btn-primary btn-lg" type="button">CLICK</button>
   </div>
 {% endblock header %}
 
 
 {% block content %}
-  {# ListView -> a variable object_list show database data automatically. #}
-  {% for item in object_list %}
-    <ul>
-      <li>{{ item.title }}</li>
-      <li>{{ item.memo }}</li>
-    </ul>
-  {% endfor %}
+  <div class='container'>
+    {# ListView -> a variable object_list show database data automatically. #}
+    {% for item in object_list %}
+      <div class='alert alert-success' role="alert">
+        <p>{{ item.title }}</p>
+        <a href="" class="btn btn-info" role="button" aria-disabled="true">EDIT</a>
+        <a href="" class="btn btn-success" role="button" aria-disabled="true">DELETE</a>
+        <a href="" class="btn btn-primary" role="button" aria-disabled="true">DETAIL</a>
+      </div>
+    {% endfor %}
+    </div>
 {% endblock content %}
