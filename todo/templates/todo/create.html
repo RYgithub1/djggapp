@@ -1,0 +1,18 @@
+{% extends 'todo/todobase.html' %}
+
+
+
+{% block header %}
+{% endblock header %}
+
+
+
+{% block content %}
+  <form action='' method='POST'>
+
+    {% csrf_token %}
+    {{ form.as_p }} {# as_table v as_url v as_p (<table>, url, <p>) #}
+    <input type='submit' value='create'>
+
+  </form>
+{% endblock content %}
