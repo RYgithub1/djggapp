@@ -1,0 +1,16 @@
+{% extends 'todo/todobase.html' %}
+
+
+
+{% block header %}
+{% endblock header %}
+
+
+
+{% block content %}
+  <form action='' method='POST'>
+    {% csrf_token %}
+    {% comment %} {{ forxm.as_p }} {% endcomment %}
+    <input type='submit' value='delete'>
+  </form>
+{% endblock content %}

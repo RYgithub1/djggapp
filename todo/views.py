@@ -1,5 +1,5 @@
 from .models import TodoModel
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView
 from django.urls import reverse_lazy
 
 '''
@@ -19,6 +19,7 @@ class TodoDetail(DetailView):
   model = TodoModel
 
 
+
 class TodoCreate(CreateView):
   template_name = 'todo/create.html'
   model = TodoModel
@@ -26,4 +27,13 @@ class TodoCreate(CreateView):
 
   ## NEED: Transfer to an URL(name=TodoList) after CREATE.
   ## After SAVE, transfer slowly(lazily).
+  success_url = reverse_lazy('TodoList')
+
+
+
+class TodoDelete(DeleteView):
+  template_name = 'todo/delete.html'
+  model = TodoModel
+
+  ## NEED: Transfer to an URL(name=TodoList) after CREATE.
   success_url = reverse_lazy('TodoList')
