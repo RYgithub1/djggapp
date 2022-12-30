@@ -1,0 +1,21 @@
+{% extends 'todo/todobase.html' %}
+
+
+
+{% block header %}
+{% endblock header %}
+
+
+
+{% block content %}
+  <form action='' method='POST'>
+    {% csrf_token %}
+
+    {{ form.title }}
+    {{ form.memo }}
+    {{ form.priority }}
+    {{ form.duedate }}
+
+    <input type='submit' value='update'>
+  </form>
+{% endblock content %}

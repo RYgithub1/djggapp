@@ -1,5 +1,5 @@
 from .models import TodoModel
-from django.views.generic import ListView, DetailView, CreateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 
 '''
@@ -35,5 +35,15 @@ class TodoDelete(DeleteView):
   template_name = 'todo/delete.html'
   model = TodoModel
 
+  ## NEED: Transfer to an URL(name=TodoList) after CREATE.
+  success_url = reverse_lazy('TodoList')
+
+
+
+class TodoUpdate(UpdateView):
+  template_name = 'todo/update.html'
+  model = TodoModel
+
+  fields = ('title', 'memo', 'priority', 'duedate')
   ## NEED: Transfer to an URL(name=TodoList) after CREATE.
   success_url = reverse_lazy('TodoList')
