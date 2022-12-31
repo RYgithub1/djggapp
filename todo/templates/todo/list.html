@@ -22,8 +22,18 @@
         <p>{{ item.title }}</p>
         <a href="update/{{ item.id }}/" class="btn btn-info" role="button" aria-disabled="true">EDIT</a>
         <a href="delete/{{ item.id }}/" class="btn btn-success" role="button" aria-disabled="true">DELETE</a>
+
+        {### 1.Direct call || 2.Call the url via name value. ###}
+        {% comment %} 1-1.
         <a href="detail/{{ item.id }}/" class="btn btn-primary" role="button" aria-disabled="true">DETAIL</a>
+        {% endcomment %}
+        {% comment %} 2-1 {% endcomment %}
+        <a href="{% url 'TodoDetail' item.pk %}" class="btn btn-primary" role="button" aria-disabled="true">DETAIL</a>
+        {% comment %} 2-2.
+        <a href="{% url 'TodoDetail' item.id %}" class="btn btn-primary" role="button" aria-disabled="true">DETAIL</a>
+        {% endcomment %}
       </div>
     {% endfor %}
     </div>
 {% endblock content %}
+
