@@ -9,21 +9,21 @@
   <div class="container-fluid py-5">
     <h1 class="display-5 fw-bold">DETAIL FOR EACH ITEM</h1>
     <p class="col-md-8 fs-4">Item-Detail is one of the most common data design patterns in  apps. In fact, almost every meaningful AppSheet app utilizes this pattern in some form. It is a natural consequence of the "entity" approach to modeling data.</p>
-
-    <i> TO </i>
-    <button class="btn btn-primary btn-lg" type="button" onclick="history.back()">LIST</button>
   </div>
 {% endblock header %}
 
 
 {% block content %}
-  <a class="btn btn-default" href="{% url 'TodoUpdate' pk=object.pk %}">|><u>UPDATE</u></a>
+  <a class="btn btn-default" href="{% url 'TodoUpdate' pk=object.pk %}">|><u>EDIT</u></a>
 
   <div class="alert alert-primary" role="alert">
     {# DetailView -> Get data with 'object' #}
-    {{ object.title }}
+    TITLE: {{ object.title }}
   </div>
   <div class="alert alert-primary" role="alert">
-    >> {{ object.memo }}
+    MEMO: {{ object.memo }}
   </div>
+
+  <hr>
+  <button class="btn btn-primary btn-sm" type="button" onclick="history.back()">BACK TO LIST</button>
 {% endblock content %}
