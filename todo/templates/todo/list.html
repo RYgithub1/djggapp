@@ -19,7 +19,7 @@
     {% for item in object_list %}
       {% comment %} <div class='alert alert-success' role="alert"> {% endcomment %}
       <div class='alert alert-{{item.priority}}' role="alert">
-        <p>{{ item.title }}</p>
+        <p>{{ item.duedate }} |> {{ item.title }}</p>
         <a href="update/{{ item.id }}/" class="btn btn-info" role="button" aria-disabled="true">EDIT</a>
         <a href="delete/{{ item.id }}/" class="btn btn-success" role="button" aria-disabled="true">DELETE</a>
 
