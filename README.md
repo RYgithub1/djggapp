@@ -23,9 +23,15 @@
 ### *APP3:* HELLOWORLD
 * Function-based view and Class-based view.
 
-### *DIR4:* ALGORITHM and DATA STRUCTURE
+### *DIR1:* ALGORITHM and DATA STRUCTURE
 * Sort and Search.
 * Linked List: Module>Class>Method, Constructor, Pointer, Append/Insert/Remove.
+
+### *APP4:* ALGORITHM and DATA STRUCTURE
+* CRUD with Class-based view.
+* Choices tuple, reverse(reverse_lazy).
+* Bootstrap, basehtml, pk, a-href and button-onclick.
+
 
 
 ---
