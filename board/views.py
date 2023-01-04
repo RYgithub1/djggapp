@@ -9,4 +9,4 @@ def qwerty(request):
 
 
 def signupfunc(request):
-  return render(request, 'signup.html', {})
+  return render(request, 'board/signup.html', {})
