@@ -9,4 +9,8 @@ def qwerty(request):
 
 
 def signupfunc(request):
-  return render(request, 'board/signup.html', {})
+  if request.method == 'POST':
+    print('-------------- POST')
+  else:
+    print('-------------- NOT POST')
+  return render(request, 'board/signup.html', {'some': 100})
