@@ -10,14 +10,15 @@ def qwerty(request):
 
 def signupfunc(request):
   ## object_list = User.objects.all()
-  object = User.objects.get(username='djgguser')
-  print(object)
-  print(object.email)
-
-
-
+  # object = User.objects.get(username='djgguser')
   if request.method == 'POST':
-    print('-------------- POST')
+    # print(request.POST) # FORM INPUT DATA -> MAKE AN USER.
+    username = request.POST['username']
+    password = request.POST['password']
+    user = User.objects.create_user(username, '', password)
+
   else:
     print('-------------- NOT POST')
+
+
   return render(request, 'board/signup.html', {'some': 11100})
