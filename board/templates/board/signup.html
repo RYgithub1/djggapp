@@ -9,22 +9,25 @@
 
 {% block boardcontent %}
   <body class="text-center">
-    {% comment %} <main class="form-signin w-100 m-auto"> {% endcomment %}
-    <form class='form-signin' method='POST'> {# Transfer the form data with POST-shape. #}
+    {# method='POST': Transfer the form data with POST-shape. #}
+    <form class='form-signin' method='POST'>
       {% csrf_token %}
 
       <h1 class="h3 mb-3 fw-normal">PLEASE SIGN IN</h1>
+
       <div class="form-floating">
-        <input type="text" class="form-control" id="inputEmail" placeholder="username" name="username">
-        <label for="inputEmail">EMAIL</label>
+        <input type="text" class="form-control" id="inputUsername" placeholder="USERNAME" name="username">
+        <label for="inputUsername">Username</label>
       </div>
+
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">PASSWORD</label>
+        <input type="password" class="form-control" id="floatingPassword" placeholder="PASSWORD" name="password">
+        <label for="floatingPassword">Password</label>
       </div>
+
       <button class="w-100 btn btn-lg btn-primary" type="submit">SIGNIN</button>
+
       <p class="mt-5 mb-3 text-muted">&copy; 2022–2023</p>
     </form>
-    {% comment %} </main> {% endcomment %}
   </body>
 {% endblock boardcontent %}
