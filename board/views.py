@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
+from django.db import IntegrityError
 
 
 
@@ -14,7 +15,13 @@ def signupfunc(request):
     print(request.POST)
     username = request.POST['username']
     password = request.POST['password']
-    user = User.objects.create_user(username, '', password)
+    try:
+      user = User.objects.create_user(username, '', password)
+      print('Registered newly.')
+      return render(request, 'board/signup.html', {'IntegrityErrorCheck': 'Registered newly.'})
+    except IntegrityError:
+      print('This user is already registered.')
+      return render(request, 'board/signup.html', {'IntegrityErrorCheck': 'This user is already registered.'})
   else:
     print("request.method == 'GET'")
 
