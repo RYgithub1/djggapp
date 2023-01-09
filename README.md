@@ -33,7 +33,8 @@
 * Bootstrap, basehtml, pk, a-href and button-onclick.
 
 ### *APP5:* BOARD
-* .
+* Trial to clone the app into the Windows environment.
+* QWERTY
 
 
 ---
