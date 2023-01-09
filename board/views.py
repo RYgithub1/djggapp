@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.db import IntegrityError
+from django.contrib.auth import authenticate, login
 
 
 
@@ -26,3 +27,17 @@ def signupfunc(request):
     print("request.method == 'GET'")
 
   return render(request, 'board/signup.html', {'some': 11100})
+
+
+
+def loginfunc(request):
+  if request.method == 'POST':
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return render(request, 'board/login.html', {'logincheck': 'LOGED IN.'})
+    else:
+        return render(request, 'board/login.html', {'logincheck': 'COULD NOT LOG IN.'})
+  return render(request, 'board/login.html', {'logincheck': 'IT WAS GET METHOD.'})

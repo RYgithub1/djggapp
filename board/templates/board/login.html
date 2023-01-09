@@ -1,0 +1,35 @@
+{% extends 'boardbase.html' %}
+
+
+
+{% block boardheader %}
+{% endblock boardheader %}
+
+
+
+{% block boardcontent %}
+  <body class="text-center">
+    {# method='POST': Transfer the form data with POST-shape. #}
+    <form class='form-login' method='POST'>
+      {% csrf_token %}
+
+      <h2>{{ logincheck }}</h2>
+
+      <h1 class="h3 mb-3 fw-normal">LOG IN PAGE YADE</h1>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="inputUsername" placeholder="USERNAME" name="username">
+        <label for="inputUsername">Username</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="PASSWORD" name="password">
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-primary" type="submit">LOGIN</button>
+
+      <p class="mt-5 mb-3 text-muted">&copy; 2022–2023</p>
+    </form>
+  </body>
+{% endblock boardcontent %}
