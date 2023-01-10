@@ -41,3 +41,9 @@ def loginfunc(request):
     else:
         return render(request, 'board/login.html', {'logincheck': 'COULD NOT LOG IN.'})
   return render(request, 'board/login.html', {'logincheck': 'IT WAS GET METHOD.'})
+
+
+
+def snslistfunc(request):
+
+  return render(request, 'board/snslist.html', {'zxc': 'zxcxc'})
