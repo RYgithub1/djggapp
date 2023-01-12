@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
+from .models import Board
 from django.db import IntegrityError
 from django.contrib.auth import authenticate, login
 
@@ -45,5 +46,6 @@ def loginfunc(request):
 
 
 def snslistfunc(request):
+  sns_list = Board.objects.all()
 
-  return render(request, 'board/snslist.html', {'zxc': 'zxcxc'})
+  return render(request, 'board/snslist.html', {'sns_list': sns_list})

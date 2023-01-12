@@ -12,4 +12,4 @@ class Board(models.Model):
   personsWhoRead = models.TextField()
 
   def __str__(self):
-    return self.snsTitle
+    return self.snsAuthor
