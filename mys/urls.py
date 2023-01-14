@@ -43,3 +43,4 @@ urlpatterns = [
 
 # Likewise path, tell the url for rooting, and storage the date in the media directory.
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
