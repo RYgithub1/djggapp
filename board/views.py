@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .models import Board
 from django.db import IntegrityError
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -38,13 +39,17 @@ def loginfunc(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
-        return render(request, 'board/login.html', {'logincheck': 'LOGED IN.'})
+        # return render(request, 'board/login.html', {'logincheck': 'LOGED IN.'})
+        return redirect('snslistfunc')
     else:
-        return render(request, 'board/login.html', {'logincheck': 'COULD NOT LOG IN.'})
-  return render(request, 'board/login.html', {'logincheck': 'IT WAS GET METHOD.'})
+        # return render(request, 'board/login.html', {'logincheck': 'COULD NOT LOG IN.'})
+        return render(request, 'board/login.html', {})
+  # return render(request, 'board/login.html', {'logincheck': 'IT WAS GET METHOD.'})
+  return render(request, 'board/login.html', {})
 
 
 
+@login_required
 def snslistfunc(request):
   sns_list = Board.objects.all()
 

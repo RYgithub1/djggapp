@@ -3,24 +3,31 @@
 
 
 {% block boardheader %}
-  <div class="alert alert-primary" role="alert"><h3>SNS BOARD</h3></div>
+  <div class="alert alert-primary" role="alert">
+    <h3>SNS BOARD</h3>
+
+    {% if user.is_authenticated %}
+      <p>status: LOGGED IN</p>
+    {% else %} {# Redirect to loginpage now by @login_required -> Not displayed. #}
+      <p>status: PLEASE LOGIN</p>
+    {% endif %}
+  </div>
+
+
 {% endblock boardheader %}
 
 
 
 {% block boardcontent %}
   <div class='container'>
-
     {% for item in sns_list %}
       <div class="alert alert-success" role="alert">
         <p>TITLE: {{item.snsTitle}}</p>
         <p>AUTHOR: {{item.snsAuthor}}</p>
       </div>
-
       <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Link1</a>
       <a href="#" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Link2</a>
       <hr>
     {% endfor %}
-
   </div>
 {% endblock boardcontent %}
