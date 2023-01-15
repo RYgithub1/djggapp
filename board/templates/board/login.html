@@ -1,4 +1,11 @@
 {% extends 'boardbase.html' %}
+{% load static %}
+
+
+
+{% block boardcustomcss %}
+  <link href="{% static 'boardstyle.css' %}" rel="stylesheet">
+{% endblock boardcustomcss %}
 
 
 
