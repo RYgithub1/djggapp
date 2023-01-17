@@ -8,4 +8,5 @@ urlpatterns = [
     path('login/', views.loginfunc, name='loginfunc'),
     path('snslist/', views.snslistfunc, name='snslistfunc'),
     path('logout/', views.logoutfunc, name='logoutfunc'),
+    path('detail/<int:pk>/', views.detailfunc, name='detailfunc'),
 ]

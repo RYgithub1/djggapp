@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from .models import Board
 from django.db import IntegrityError
@@ -59,3 +59,12 @@ def snslistfunc(request):
 def logoutfunc(request):
     logout(request)
     return redirect('loginfunc')
+
+
+
+def detailfunc(request, pk):
+  object = get_object_or_404(Board, pk=pk)
+
+  return render(request, 'board/snsdetaild.html', {'object': object})
+
+
