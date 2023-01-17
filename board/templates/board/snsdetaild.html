@@ -4,7 +4,7 @@
 
 {% block boardheader %}
   <div class="alert alert-primary" role="alert">
-    <h3>Detail PAGE</h3>
+    <h3><a href="{% url 'snslistfunc' %}">Detail PAGE</a></h3>
 
     {% if user.is_authenticated %}
       <p>status: LOGGED IN</p>
