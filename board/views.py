@@ -62,9 +62,8 @@ def logoutfunc(request):
 
 
 
-def detailfunc(request, pk):
+def snsdetailfunc(request, pk):
   object = get_object_or_404(Board, pk=pk)
-
   return render(request, 'board/snsdetaild.html', {'object': object})
 
 
