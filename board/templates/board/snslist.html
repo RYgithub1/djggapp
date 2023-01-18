@@ -4,7 +4,7 @@
 
 {% block boardheader %}
   <div class="alert alert-primary" role="alert">
-    <h3>SNS BOARD</h3>
+    <h3>SNS TOP BOARD</h3>
 
     {% if user.is_authenticated %}
       <p>status: LOGGED IN</p>
@@ -26,8 +26,8 @@
         <p>TITLE: <a href="{% url 'snsdetailfunc' item.pk %}">{{item.snsTitle}}</a></p>
         <p>AUTHOR: <a href="{% url 'snsdetailfunc' item.pk %}">{{item.snsAuthor}}</a></p>
       </div>
-      <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">LIKEIT</a>
-      <a href="#" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">WATCHED</a>
+      <a href="{% url 'likeitfunc' item.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">LIKEIT: {{item.snsGood}}</a>
+      <a href="#" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">WATCHED: {{item.snsRead}}</a>
       <hr>
     {% endfor %}
   </div>

@@ -9,4 +9,5 @@ urlpatterns = [
     path('snslist/', views.snslistfunc, name='snslistfunc'),
     path('logout/', views.logoutfunc, name='logoutfunc'),
     path('snsdetail/<int:pk>/', views.snsdetailfunc, name='snsdetailfunc'),
+    path('likeit/<int:pk>/', views.likeitfunc, name='likeitfunc'),
 ]

@@ -67,3 +67,9 @@ def snsdetailfunc(request, pk):
   return render(request, 'board/snsdetaild.html', {'object': object})
 
 
+
+def likeitfunc(request, pk):
+  object = Board.objects.get(pk=pk)
+  object.snsGood += 1
+  object.save()
+  return redirect('snslistfunc')
