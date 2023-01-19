@@ -73,3 +73,17 @@ def likeitfunc(request, pk):
   object.snsGood += 1
   object.save()
   return redirect('snslistfunc')
+
+
+def readitfunc(request, pk):
+  object = Board.objects.get(pk=pk)
+
+  username = request.user.get_username() # Get login-user-information to store his name in the list for checking cliked status.
+
+  if username in object.personsWhoRead: # Condition for clicked or unclicked.
+    return redirect('snslistfunc')
+  else:
+    object.snsRead += 1
+    object.personsWhoRead = object.personsWhoRead + " " + username
+    object.save()
+    return redirect('snslistfunc')

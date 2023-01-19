@@ -27,7 +27,7 @@
         <p>AUTHOR: <a href="{% url 'snsdetailfunc' item.pk %}">{{item.snsAuthor}}</a></p>
       </div>
       <a href="{% url 'likeitfunc' item.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">LIKEIT: {{item.snsGood}}</a>
-      <a href="#" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">WATCHED: {{item.snsRead}}</a>
+      <a href="{% url 'readitfunc' item.pk %}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">WATCHED: {{item.snsRead}}</a>
       <hr>
     {% endfor %}
   </div>
