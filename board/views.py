@@ -4,6 +4,8 @@ from .models import Board
 from django.db import IntegrityError
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
 
 
 
@@ -87,3 +89,11 @@ def readitfunc(request, pk):
     object.personsWhoRead = object.personsWhoRead + " " + username
     object.save()
     return redirect('snslistfunc')
+
+
+
+class BoardCreate(CreateView):
+  template_name = 'board/snscreate.html'
+  model = Board
+  fields = ('snsTitle', 'snsContent', 'snsAuthor', 'snsImage')
+  success_url = reverse_lazy('snslistfunc')

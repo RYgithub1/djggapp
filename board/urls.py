@@ -11,4 +11,5 @@ urlpatterns = [
     path('snsdetail/<int:pk>/', views.snsdetailfunc, name='snsdetailfunc'),
     path('likeit/<int:pk>/', views.likeitfunc, name='likeitfunc'),
     path('readit/<int:pk>/', views.readitfunc, name='readitfunc'),
+    path('create/', views.BoardCreate.as_view(), name='createfunc'),
 ]
