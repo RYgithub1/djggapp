@@ -1,0 +1,24 @@
+{% extends 'boardbase.html' %}
+
+
+
+{% block boardheader %}
+{% endblock boardheader %}
+
+
+
+{% block boardcontent %}
+  <form method='POST' enctype='maltipart/form-data'> {# Use FILE -> Set enctype #}
+    {% csrf_token %}
+
+    <p>SNSTITLE: <input type='text' name='snstitle' placeholder='sns-title'></p>
+    <p>SNSCONTENT: <input type='text' name='snscontent' placeholder='sns-content'></p>
+    <input type='file' name='snsimage' placeholder='sns-image'>
+
+    {# type=hidden: Cannot see on the screen but works. #}
+    {# Get login-user #}
+    <input type='hidden' name='snsauthor' value='{{user.username}}'>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">CREATE</button>
+  </form>
+{% endblock boardcontent %}

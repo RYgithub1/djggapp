@@ -7,9 +7,9 @@ class Board(models.Model):
   snsContent = models.TextField()
   snsAuthor = models.CharField(max_length=50)
   snsImage = models.ImageField(upload_to='')
-  snsGood = models.IntegerField()
-  snsRead = models.IntegerField()
-  personsWhoRead = models.TextField()
+  snsGood = models.IntegerField(null='True', blank='True', default='1')
+  snsRead = models.IntegerField(null='True', blank='True', default='1')
+  personsWhoRead = models.TextField(null='True', blank='True', default='dorami')
 
   def __str__(self):
     return self.snsAuthor
