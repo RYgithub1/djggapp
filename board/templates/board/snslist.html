@@ -9,6 +9,7 @@
     {% if user.is_authenticated %}
       <p>status: LOGGED IN</p>
       <a href="{% url 'logoutfunc' %}" class="" role="button">LOG OUT</a>
+      <a href="{% url 'createfunc' %}" class="btn btn-warning" tabindex="-1" role="button" aria-disabled="true">CREATE NEW</a>
     {% else %} {# Redirect to loginpage now by @login_required -> Not displayed. #}
       <p>status: PLEASE LOGIN</p>
     {% endif %}

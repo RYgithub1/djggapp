@@ -9,6 +9,10 @@
 
 {% block boardcontent %}
   {% if user.is_authenticated %}
+    <hr>
+    <a href="{% url 'snslistfunc' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">BACK TO SNSLIST</a>
+    <hr>
+
     <form method='POST' enctype='maltipart/form-data'> {# Use FILE -> Set enctype #}
       {% csrf_token %}
       <p>SNSTITLE: <input type='text' name='snstitle' placeholder='sns-title'></p>
@@ -18,6 +22,7 @@
       {# type=hidden: Cannot see on the screen but works. #}
       {# Get login-user #}
       <input type='hidden' name='snsauthor' value='{{user.username}}'>
+      <div>vvv</div>
       <button class="w-100 btn btn-lg btn-primary" type="submit">CREATE</button>
     </form>
 
