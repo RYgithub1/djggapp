@@ -34,7 +34,10 @@
 
 ### *APP5:* BOARD
 * Trial to clone the app into the Windows environment.
-* QWERTY
+* CRUD: POST vs GET
+* User objects, signin-login-logout. user.is_authenticate and login_required.
+* Image files. MEDIA_URL and STATIC_URL.
+* Simple likeit and readit.
 
 
 ---
