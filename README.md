@@ -25,7 +25,7 @@
 
 ### *DIR1:* ALGORITHM and DATA STRUCTURE
 * Sort and Search.
-* Linked List: Module>Class>Method, Constructor, Pointer, Append/Insert/Remove.
+* Linked List: Module>Class>Method, Constructor, Pointer, Append/Insert/Remove. reverse() with reverse or recursive.
 
 ### *APP4:* TODO
 * CRUD with Class-based view.
