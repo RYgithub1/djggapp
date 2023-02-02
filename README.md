@@ -27,7 +27,7 @@
 * Sort and Search.
 * Linked List: Module>Class>Method, Constructor, Pointer, Append/Insert/Remove. Reverse(Iterative/Recursive). Reverse with even number.
 * Doubly Linked List: Append, Insert, Print, Remove, Reverse(Iterative/Recursive). Sort.
-* Hash table
+* Hash table. Pair numbers.
 
 ### *APP4:* TODO
 * CRUD with Class-based view.
