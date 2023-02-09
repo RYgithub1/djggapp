@@ -29,7 +29,7 @@
 * Doubly Linked List: Append, Insert, Print, Remove, Reverse(Iterative/Recursive). Sort.
 * Hash table. Pair numbers.
 * Stack. Queue w||w/o deque. Reversed Queue w/o method.
-* Binary Search Tree (Insert/Inorder/Search/).
+* Binary Search Tree (Insert/Inorder/Search/remove).
 
 
 ### *APP4:* TODO
