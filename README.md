@@ -28,9 +28,9 @@
 * Linked List: Module>Class>Method, Constructor, Pointer, Append/Insert/Remove. Reverse(Iterative/Recursive). Reverse with even number.
 * Doubly Linked List: Append, Insert, Print, Remove, Reverse(Iterative/Recursive). Sort.
 * Hash table. Pair numbers.
-* Stack. Queue w||w/o deque. Reversed Queue w/o method.
+* Stack. Queue w||w/o deque. R$$eversed Queue w/o method.
 * Binary Search Tree (Insert/Inorder/Search/remove). Class with inner function.
-* Heap (Mini heap): Push/
+* Heap (Mini heap): Push/Pop.
 
 
 ### *APP4:* TODO
