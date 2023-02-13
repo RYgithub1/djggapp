@@ -30,7 +30,7 @@
 * Hash table. Pair numbers.
 * Stack. Queue w||w/o deque. R$$eversed Queue w/o method.
 * Binary Search Tree (Insert/Inorder/Search/remove). Class with inner function.
-* Heap (Mini heap): Push/Pop.
+* Heap (Mini heap): Push/Pop. Heapq.
 
 
 ### *APP4:* TODO
