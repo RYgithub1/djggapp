@@ -31,7 +31,7 @@
 * Stack. Queue w||w/o deque. R$$eversed Queue w/o method.
 * Binary Search Tree (Insert/Inorder/Search/remove). Class with inner function.
 * Heap (Mini heap): Push/Pop. Heapq.
-* Escape sequence:\n\t. ''*10. set(). List Comprehensions and lambda. *args**kwargs. @decorator. Property, Lambda, Generator. if __name (vs import calc). try-except.
+* Escape sequence:\n\t. ''*10. set(). List Comprehensions and lambda. *args**kwargs. @decorator. Property, Lambda, Generator. if __name (vs import calc). try-except. Scraping, time.sleep.
 
 
 ### *APP4:* TODO
