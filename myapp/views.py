@@ -1,6 +1,9 @@
-from django.http import HttpResponse
+from django.shortcuts import render #, get_object_or_404, redirect
+#from django.http import HttpResponse
 
 
 
 def myapp_index(request):
-  return HttpResponse("Hello, world")
+  context = {'name':'Yade'}
+  #return HttpResponse("Hello, world")
+  return render(request, 'myapp/index.html', context)
