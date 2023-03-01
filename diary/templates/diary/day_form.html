@@ -1,0 +1,12 @@
+{% extends 'diary/base.html' %}
+
+
+
+{% block content %}
+  <form action='' method='POST'>
+    {{ form.as_p}}
+    <button type='submit'>SUBMIT</button>
+    {% csrf_token %}
+  </form>
+{% endblock content %}
+
