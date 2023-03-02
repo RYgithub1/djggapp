@@ -3,8 +3,8 @@
 
 
 {% block content %}
-  <form action='' method='POST'>
-    {{ form.as_p}}
+  <form action='' method='POST'>  {# action='TARGET_URL': 'empty'=CurrentPage #}
+    {{ form.as_p }}
     <button type='submit'>SUBMIT</button>
     {% csrf_token %}
   </form>
