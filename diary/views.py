@@ -1,10 +1,14 @@
 from django.shortcuts import render, redirect
 from .forms import DayCreateForm
+from .models import Day
 
 
 
 def diary_index(request):
-  content = {}
+  day_list = Day.objects.all()
+  content = {
+    'day_list':day_list,
+  }
   return render(request, 'diary/day_list.html', content)
 
 
