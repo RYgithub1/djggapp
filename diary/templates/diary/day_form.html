@@ -4,7 +4,22 @@
 
 {% block content %}
   <form action='' method='POST'>  {# action='TARGET_URL': 'empty'=CurrentPage #}
-    {{ form.as_p }}
+    <table class='table'>
+      <tr>
+        <th>TITLE</th>
+        <td>{{ form.title }}</td>
+      </tr>
+      <tr>
+        <th>TEXT</th>
+        <td>{{ form.text }}</td>
+      </tr>
+      <tr>
+        <th>DATE</th>
+        <td>{{ form.date }}</td>
+      </tr>
+    </table>
+
+    <!-- {{ form.as_p }} -->
     <button type='submit'>SUBMIT</button>
     {% csrf_token %}
   </form>
