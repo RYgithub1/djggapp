@@ -19,6 +19,7 @@
         <tr>
           <td>{{ day.title }}</td>
           <td>{{ day.date }}</td>
+          <td><a class="nav-link" href="{% url 'diary_update' day.pk %}">UPDATE</a></td>
         </tr>
       {% endfor %}
     </tbody>
