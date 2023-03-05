@@ -1,0 +1,27 @@
+{% extends 'diary/base.html' %}
+
+
+
+{% block content %}
+  <form action='' method='POST'>  {# action='TARGET_URL': 'empty'=CurrentPage #}
+    <table class='table'>
+      <tr>
+        <th>TITLE</th>
+        <td>{{ day.title }}</td>
+      </tr>
+      <tr>
+        <th>TEXT</th>
+        <td>{{ day.text }}</td>
+      </tr>
+      <tr>
+        <th>DATE</th>
+        <td>{{ day.date }}</td>
+      </tr>
+    </table>
+
+    <p>DELETE THIS DATA?</p>
+    <button type='submit'>YES</button>
+    {% csrf_token %}
+  </form>
+{% endblock content %}
+
