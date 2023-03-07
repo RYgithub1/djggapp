@@ -8,3 +8,5 @@ class Day(models.Model):
   text = models.TextField('TEXT')
   date = models.DateTimeField('DATE', default=timezone.now)
 
+  def __str__(self):
+    return self.title
