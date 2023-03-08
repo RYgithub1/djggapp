@@ -24,7 +24,10 @@
               <a class="nav-link active" aria-current="page" href="{% url 'diary_index' %}">LIST</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'diary_add' %}">ADD</a>
+              {% comment %} <a class="nav-link" href="{% url 'diary_add' %}">ADD</a> {% endcomment %}
+              {% comment %} <a class="nav-link" href="#">ADD</a> {% endcomment %}
+              {% comment %} 'admin:APPNAME_MODELNAME_URL' {% endcomment %}
+              <a class="nav-link" href="{% url 'admin:diary_day_add' %}" target="_blank">ADD</a>
             </li>
           </ul>
         </div>
