@@ -19,9 +19,13 @@
         <tr>
           <td><a href="{% url 'diary_detail' day.pk %}">{{ day.title }}</a></td>
           <td>{{ day.date }}</td>
-          <td><a class="nav-link" href="{% url 'admin:diary_day_change' day.pk %}" target="_blank">UPDATE</a></td>
-          <td><a class="nav-link" href="{% url 'admin:diary_day_delete' day.pk %}" target="_blank">DELETE</a></td>
-        </tr>
+          {% if user.is_superuser %}
+            <td><a class="nav-link" href="{% url 'admin:diary_day_change' day.pk %}" target="_blank">UPDATE</a></td>
+          {% endif %}
+          {% if user.is_superuser %}
+            <td><a class="nav-link" href="{% url 'admin:diary_day_delete' day.pk %}" target="_blank">DELETE</a></td>
+          {% endif %}
+          </tr>
       {% endfor %}
     </tbody>
   </table>
