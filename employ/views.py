@@ -1,7 +1,9 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
+from .models import Employ
 
 
 
 # class EmployIndexView(generic.TemplateView):
-class EmployIndexView(TemplateView):
-  template_name = 'employ/employ_list.html'
+#  template_name = 'employ/employ_list.html'
+class EmployIndexView(ListView):
+  model = Employ
