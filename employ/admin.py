@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Department, Employee
+from .models import Department, Employ
 
 
 
 admin.site.register(Department)
-admin.site.register(Employee)
+admin.site.register(Employ)

@@ -12,7 +12,7 @@ class Department(models.Model):
 
 
 
-class Employee(models.Model):
+class Employ(models.Model):
   first_name = models.CharField('first name', max_length=20)
   last_name = models.CharField('last name', max_length=20)
   email = models.EmailField('mail address', blank=True)

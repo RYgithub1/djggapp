@@ -3,6 +3,26 @@
 
 
 {% block employcontent %}
-  TOPPAGE
-
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>FAMILY NAME</th>
+      <th>PERSONAL NAME</th>
+      <th>EMAIL</th>
+      <th>DEPARTMENT</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for emp in employ_list %}
+      <tr>
+        <td>{{ emp.pk }}</td>
+        <td>{{ emp.last_name }}</td>
+        <td>{{ emp.first_name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.department }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock employcontent %}
