@@ -14,7 +14,7 @@ class Department(models.Model):
 
 
 class Club(models.Model):
-  name = models.CharField('Cclub name', max_length = 33)
+  name = models.CharField('club name', max_length = 33)
   created_at = models.DateTimeField('Date', default=timezone.now)
 
   def __str__(self):
@@ -32,6 +32,11 @@ class Employ(models.Model):
     on_delete = models.PROTECT,
   )
   created_at = models.DateTimeField('Date', default=timezone.now)
+
+  club = models.ManyToManyField(
+    Club,
+    verbose_name = 'club',
+  )
 
   def __str__(self):
     return '{0} {1} {2}'.format(self.last_name, self.first_name, self.department)
