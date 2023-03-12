@@ -12,6 +12,16 @@ class Department(models.Model):
 
 
 
+
+class Club(models.Model):
+  name = models.CharField('Cclub name', max_length = 33)
+  created_at = models.DateTimeField('Date', default=timezone.now)
+
+  def __str__(self):
+    return self.name
+
+
+
 class Employ(models.Model):
   first_name = models.CharField('first name', max_length=20)
   last_name = models.CharField('last name', max_length=20)
