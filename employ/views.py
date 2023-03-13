@@ -21,9 +21,9 @@ class EmployIndexView(ListView):
     form.is_valid()
     queryset = super().get_queryset()
 
-    departmen_yade = form.cleaned_data['department']
-    if departmen_yade:
-        queryset = queryset.filter(department=departmen_yade)
+    department_yade = form.cleaned_data['department']
+    if department_yade:
+        queryset = queryset.filter(department=department_yade)
 
     club_yade = form.cleaned_data['club']
     if club_yade:

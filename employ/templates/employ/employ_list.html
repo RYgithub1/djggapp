@@ -3,33 +3,38 @@
 
 
 {% block employcontent %}
-<table class="table table-bordered mt-5">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>FAMILY NAME</th>
-      <th>PERSONAL NAME</th>
-      <th>EMAIL</th>
-      <th>DEPARTMENT</th>
-      <th>CLUB</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for emp in employ_list %}
+  <form action='' method='GET'>
+    {{ form }}
+    <button type='submit'>SEARCH</button>
+  </form>
+
+  <table class="table table-bordered mt-5">
+    <thead>
       <tr>
-        <td>{{ emp.pk }}</td>
-        <td>{{ emp.last_name }}</td>
-        <td>{{ emp.first_name }}</td>
-        <td>{{ emp.email }}</td>
-        <td>{{ emp.department }}</td>
-        <td>
-          {% for a_club in emp.club.all %}
-            {{ a_club.name }}
-            .
-          {% endfor %}
-        </td>
+        <th>ID</th>
+        <th>FAMILY NAME</th>
+        <th>PERSONAL NAME</th>
+        <th>EMAIL</th>
+        <th>DEPARTMENT</th>
+        <th>CLUB</th>
       </tr>
-    {% endfor %}
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      {% for emp in employ_list %}
+        <tr>
+          <td>{{ emp.pk }}</td>
+          <td>{{ emp.last_name }}</td>
+          <td>{{ emp.first_name }}</td>
+          <td>{{ emp.email }}</td>
+          <td>{{ emp.department }}</td>
+          <td>
+            {% for a_club in emp.club.all %}
+              {{ a_club.name }}
+              .
+            {% endfor %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock employcontent %}

@@ -10,7 +10,7 @@ class SearchForm(forms.Form):
     required = False,
   )
 
-  Department = forms.ModelChoiceField(
+  department = forms.ModelChoiceField(
     queryset = Department.objects,
     label = 'DEPARTMENT',
     required = False,
