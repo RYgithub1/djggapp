@@ -8,6 +8,7 @@ from .forms import SearchForm
 #  template_name = 'employ/employ_list.html'
 class EmployIndexView(ListView):
   model = Employ
+  paginate_by = 4
 
 
   def get_context_data(self):
