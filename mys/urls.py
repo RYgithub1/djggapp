@@ -39,6 +39,8 @@ urlpatterns = [
     path('diary/', include('diary.urls')),
     ## EMPLOY APP
     path('employ/', include('employ.urls')),
+    ## JOURNAL APP
+    path('journal/', include('journal.urls')),
 
     ## Model data to a multiple html pages with urls/template without views function. Ex: Pages of Privacy/Contact/Invenstment.
     path('flatpage/', include('django.contrib.flatpages.urls')),
