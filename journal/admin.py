@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import JournalCategory, JournalPost
 
-# Register your models here.
+
+
+admin.site.register(JournalCategory)
+admin.site.register(JournalPost)
