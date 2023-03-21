@@ -11,6 +11,40 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">JOURNAL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'journal_index' %}">HOME</a>
+            </li>
+            {% if user.is_superuser %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'admin:index' %}">ADMIN</a>
+              </li>
+            {% endif %}
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">LOG YOUR LIFE</h1>
+      <p class="col-md-8 fs-4">
+        Writing essays is like studying your soul. Have you ever wondered why do teachers and professors give you this bunch of written assignments? Why can’t they ask you all that in an oral form? The answer is quite simple. When you write an essay – you learn to express yourself in a more logical way. Besides, you develop your writing skills, your vocabulary, and your own writing style. And all that is not an oral activity. By writing simple essays, you can grow to be a very talented and creative writer or speaker, logical thinker, or whatever. Writing develops you in many different ways.
+      </p>
+    </div>
+
+
     <div class="container">
       {% block content %}{% endblock content %}
     </div>
