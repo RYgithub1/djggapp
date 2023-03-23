@@ -5,8 +5,13 @@
 {% block content %}
   <h1>Show items ... </h1>
   {% for a_post in journalpost_list %}
-    {{ a_post.title }}
-    <br>
-
+    <div class="card mb-3" style="width: 22rem;">
+      <h3 class="card-header bg-dark text-white">{{ a_post.title }}</h3>
+      <div class="card-body">
+        <p>{{ a_post.created_date }}</p>
+        <p>(GENRE) {{ a_post.category }}</p>
+        <a href="#" class="btn btn-dark">DETAIL</a>
+      </div>
+    </div>
   {% endfor %}
 {% endblock %}
