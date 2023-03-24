@@ -52,7 +52,12 @@
           {% block content %}{% endblock content %}
         </div>
         <div class='col-md-4'>
-          CATEGORY LIST
+          <li class="list-group-item bg-dark text-white">CATEGORY LIST</li>
+          <ul class="list-group">
+            {% for a_category in category_list %}
+              <li class="list-group-item">{{ a_category }}</li>
+            {% endfor %}
+          </ul>
         </div>
       </div>
     </div>
