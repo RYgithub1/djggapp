@@ -3,9 +3,8 @@
 
 
 {% block content %}
-  <h1>Show items ... </h1>
   {% for a_post in journalpost_list %}
-    <div class="card mb-3" style="width: 22rem;">
+    <div class="card mb-3" style="width:46rem;">
       <h3 class="card-header bg-dark text-white">{{ a_post.title }}</h3>
       <div class="card-body">
         <p>{{ a_post.created_date }}</p>
