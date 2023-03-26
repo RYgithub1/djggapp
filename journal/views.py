@@ -10,4 +10,10 @@ class IndexView(generic.ListView):
   model = JournalPost
 
   def get_queryset(self):
-    return JournalPost.objects.order_by('-created_date')
+    queryset = JournalPost.objects.order_by('-created_date')
+
+    keyword = self.request.GET.get('search_keyword_1')
+    if keyword:
+      queryset = queryset.filter(title=keyword)
+
+    return queryset

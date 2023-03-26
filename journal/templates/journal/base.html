@@ -29,9 +29,9 @@
               </li>
             {% endif %}
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+          <form class="d-flex" role="search" method="GET" action="{% url 'journal_index' %}">
+            <input class="form-control me-2" type="search" placeholder="search" aria-label="Search" name="search_keyword_1">
+            <button class="btn btn-outline-success" type="submit">SEARCH</button>
           </form>
         </div>
       </div>
