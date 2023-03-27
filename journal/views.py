@@ -1,6 +1,7 @@
 # from django.shortcuts import render
 from django.views import generic
 from .models import JournalPost
+from django.db.models import Q
 
 
 
@@ -14,6 +15,13 @@ class IndexView(generic.ListView):
 
     keyword = self.request.GET.get('search_keyword_1')
     if keyword:
-      queryset = queryset.filter(title=keyword)
+      ## SINGLE
+      # queryset = queryset.filter(title=keyword) ## Exact match
+      # queryset = queryset.filter(title__contains=keyword) ## Partial match: lowercase-uppercase
+      # queryset = queryset.filter(title__icontains=keyword) ## Partial match: both case
+      ## MULTI
+      queryset = queryset.filter(
+        Q(title__icontains=keyword) | Q(text__icontains=keyword)
+      )
 
     return queryset
