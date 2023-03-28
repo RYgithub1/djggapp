@@ -9,6 +9,7 @@ from django.db.models import Q
 #   template_name = 'journal/post_list.html'
 class IndexView(generic.ListView):
   model = JournalPost
+  paginate_by = 4
 
   def get_queryset(self):
     queryset = JournalPost.objects.order_by('-created_date')
