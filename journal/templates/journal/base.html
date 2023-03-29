@@ -55,7 +55,7 @@
           <li class="list-group-item bg-dark text-white">CATEGORY LIST</li>
           <ul class="list-group">
             {% for a_category in category_list %}
-              <li class="list-group-item">{{ a_category }}</li>
+              <li class="list-group-item"><a href="{% url 'journal_category' a_category.pk %}">{{ a_category }}</a></li>
             {% endfor %}
           </ul>
         </div>

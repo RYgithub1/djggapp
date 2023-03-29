@@ -1,6 +1,6 @@
-# from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from django.views import generic
-from .models import JournalPost
+from .models import JournalPost, JournalCategory
 from django.db.models import Q
 
 
@@ -25,4 +25,15 @@ class IndexView(generic.ListView):
         Q(title__icontains=keyword) | Q(text__icontains=keyword)
       )
 
+    return queryset
+
+
+
+class CategoryView(generic.ListView):
+  model = JournalPost # JournalCategory:X
+  paginate_by = 6
+
+  def get_queryset(self):
+    a_category = get_object_or_404(JournalCategory, pk=self.kwargs['pk'])
+    queryset = JournalPost.objects.order_by('-created_date').filter(category=a_category)
     return queryset
