@@ -37,3 +37,8 @@ class CategoryView(generic.ListView):
     a_category = get_object_or_404(JournalCategory, pk=self.kwargs['pk'])
     queryset = JournalPost.objects.order_by('-created_date').filter(category=a_category)
     return queryset
+
+
+
+class DetailView(generic.DetailView):
+  model = JournalPost  # HTMLNAME = modelname_viewname.py = journalpost_detail.py

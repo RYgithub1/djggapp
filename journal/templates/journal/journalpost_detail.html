@@ -1,0 +1,15 @@
+{% extends 'journal/base.html' %}
+
+
+
+{% block content %}
+  <div class="card mb-3" style="width:46rem;">
+    <h3 class="card-header bg-dark text-white">{{ a_post.title }}</h3>
+    <div class="card-body">
+      <p>{{ a_post.created_date }}</p>
+      <p>(GENRE) {{ a_post.category }}</p>
+      {{ a_post.text | linebreaksbr }}
+    </div>
+  </div>
+
+{% endblock %}

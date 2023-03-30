@@ -9,7 +9,7 @@
       <div class="card-body">
         <p>{{ a_post.created_date }}</p>
         <p>(GENRE) {{ a_post.category }}</p>
-        <a href="#" class="btn btn-dark">DETAIL</a>
+        <a href="{% url 'journal_detail' a_post.pk %}" class="btn btn-dark">DETAIL</a>
       </div>
     </div>
   {% endfor %}
