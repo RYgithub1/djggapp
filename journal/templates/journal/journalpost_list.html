@@ -3,7 +3,7 @@
 
 
 {% block content %}
-  {% for a_post in journalpost_list %}
+  {% for a_post in journalpost_list %}  {# modelname & viewname -> journalpost_list #}
     <div class="card mb-3" style="width:46rem;">
       <h3 class="card-header bg-dark text-white">{{ a_post.title }}</h3>
       <div class="card-body">

@@ -4,11 +4,11 @@
 
 {% block content %}
   <div class="card mb-3" style="width:46rem;">
-    <h3 class="card-header bg-dark text-white">{{ a_post.title }}</h3>
+    <h3 class="card-header bg-dark text-white">{{ journalpost.title }}</h3>  {# modelname -> journalpost #}
     <div class="card-body">
-      <p>{{ a_post.created_date }}</p>
-      <p>(GENRE) {{ a_post.category }}</p>
-      {{ a_post.text | linebreaksbr }}
+      <p>{{ journalpost.created_date }}</p>
+      <p>(GENRE) {{ journalpost.category }}</p>
+      {{ journalpost.text | linebreaksbr | urlize }}
     </div>
   </div>
 
