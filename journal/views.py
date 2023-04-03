@@ -1,6 +1,7 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.views import generic
-from .models import JournalPost, JournalCategory
+from .forms import CommentCreateForm
+from .models import JournalPost, JournalCategory, JournalComment
 from django.db.models import Q
 
 
@@ -42,3 +43,16 @@ class CategoryView(generic.ListView):
 
 class DetailView(generic.DetailView):
   model = JournalPost  # HTMLNAME = modelname_viewname.py = journalpost_detail.py
+
+
+
+class CommentView(generic.CreateView):
+  model = JournalComment
+  form_class = CommentCreateForm
+
+  def form_valid(self, form):
+    post_pk = self.kwargs['post_pk']
+    comment = form.save(commit=False)
+    comment.post = get_object_or_404(JournalPost, pk=post_pk)
+    comment.save()
+    return redirect('journal_detail', pk=post_pk)
