@@ -12,5 +12,13 @@
     </div>
   </div>
 
+  {% for a_comment in journalpost.journalcomment_set.all %}
+    <p>
+      {{ a_comment.name }}
+      |>
+      {{ a_comment.comment | linebreaksbr }}
+    </p>
+  {% endfor %}
+
   <a class="btn btn-dark" href="{% url 'journal_comment' journalpost.pk %}">COMMENT PAGE</a>
 {% endblock %}
