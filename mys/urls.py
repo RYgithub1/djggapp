@@ -41,6 +41,8 @@ urlpatterns = [
     path('employ/', include('employ.urls')),
     ## JOURNAL APP
     path('journal/', include('journal.urls')),
+    ## VIDEOS APP
+    path('videos/', include('videos.urls')),
 
     ## Model data to a multiple html pages with urls/template without views function. Ex: Pages of Privacy/Contact/Invenstment.
     path('flatpage/', include('django.contrib.flatpages.urls')),
@@ -49,6 +51,7 @@ urlpatterns = [
     ### (2)BASE_URL/flatpage/sustainability/
 ]
 
-# Likewise path, tell the url for rooting, and storage the date in the media directory.
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG:
+    # Likewise path, tell the url for rooting, and storage the date in the media directory.
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
