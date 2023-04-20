@@ -43,6 +43,8 @@ urlpatterns = [
     path('journal/', include('journal.urls')),
     ## VIDEOS APP
     path('videos/', include('videos.urls')),
+    ## MNIST APP
+    path('mnist/', include('mnist.urls')),
 
     ## Model data to a multiple html pages with urls/template without views function. Ex: Pages of Privacy/Contact/Invenstment.
     path('flatpage/', include('django.contrib.flatpages.urls')),
