@@ -1,0 +1,14 @@
+{% extends 'mnist/mnistbase.html' %}
+
+
+
+{% block content %}
+  <form action="" method="POST" enctype='multipart/form-data'>
+    {% csrf_token %}
+
+    {{ form.file }}
+    <hr>
+    <input type="submit" class="btn btn-outline-primary btn-lg" value="SEND">
+
+  </form>
+{% endblock %}
