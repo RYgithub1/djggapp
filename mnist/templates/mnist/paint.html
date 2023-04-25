@@ -1,0 +1,70 @@
+{% extends 'mnist/mniatbase.html' %}
+
+
+
+{% block content %}
+  {% csrf_token %}
+
+  <form action="" method="POST" enctype='multipart/form-data'>
+    <canvas id="canvas" width="140" height="140"></canvas>
+    <hr>
+    <input type="hidden" name="img-src" value="" id="img-src">
+    <input type="button" class="btn btn-outline-primary btn-lg" id="send" value="SEND">
+  </form>
+{% endblock content %}
+
+
+
+{% block extrajs %}
+  <script>
+  // Obtain the object to operate canvas
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+
+  // Paint canvas into black
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, 140, 140);
+
+  ctx.lineCap = 'square';
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = 13;
+  var draw = false;
+
+  // Call when mouce moves
+  canvas.addEventListener("mousemove",function(e) {
+    var rect = e.target.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+
+    if(draw) {
+      ctx.beginPath();
+      ctx.moveTo(mouseX1,mouseY1);
+      ctx.lineTo(mouseX,mouseY);
+      ctx.stroke();
+      mouseX1 = mouseX;
+      mouseY1 = mouseY;
+    }
+  });
+
+  // Invoke with tha click
+  canvas.addEventListener("mousedown",function(e) {
+    draw = true;
+    mouseX1 = mouseX;
+    mouseY1 = mouseY;
+  });
+
+  // Call with click
+  canvas.addEventListener("mouseup", function(e){
+    draw = false;
+  });
+
+
+  // Call with SEND button
+  $('#send').on('click',function(e){
+      var form = $(this).parents('form');
+      var src = canvas.toDataURL('image/png');
+      $('#img-src').val(src);
+      form.submit();
+  });
+  </script>
+{% endblock extrajs %}
