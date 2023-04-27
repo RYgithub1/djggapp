@@ -17,54 +17,54 @@
 
 {% block extrajs %}
   <script>
-  // Obtain the object to operate canvas
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
+    // Obtain the object to operate canvas
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
 
-  // Paint canvas into black
-  ctx.fillStyle = '#000';
-  ctx.fillRect(0, 0, 140, 140);
+    // Paint canvas into black
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, 140, 140);
 
-  ctx.lineCap = 'square';
-  ctx.strokeStyle = '#fff';
-  ctx.lineWidth = 13;
-  var draw = false;
+    ctx.lineCap = 'square';
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 13;
+    var draw = false;
 
-  // Call when mouce moves
-  canvas.addEventListener("mousemove",function(e) {
-    var rect = e.target.getBoundingClientRect();
-    mouseX = e.clientX - rect.left;
-    mouseY = e.clientY - rect.top;
+    // Call when mouce moves
+    canvas.addEventListener("mousemove",function(e) {
+      var rect = e.target.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
 
-    if(draw) {
-      ctx.beginPath();
-      ctx.moveTo(mouseX1,mouseY1);
-      ctx.lineTo(mouseX,mouseY);
-      ctx.stroke();
+      if(draw) {
+        ctx.beginPath();
+        ctx.moveTo(mouseX1,mouseY1);
+        ctx.lineTo(mouseX,mouseY);
+        ctx.stroke();
+        mouseX1 = mouseX;
+        mouseY1 = mouseY;
+      }
+    });
+
+    // Invoke with tha click
+    canvas.addEventListener("mousedown",function(e) {
+      draw = true;
       mouseX1 = mouseX;
       mouseY1 = mouseY;
-    }
-  });
+    });
 
-  // Invoke with tha click
-  canvas.addEventListener("mousedown",function(e) {
-    draw = true;
-    mouseX1 = mouseX;
-    mouseY1 = mouseY;
-  });
-
-  // Call with click
-  canvas.addEventListener("mouseup", function(e){
-    draw = false;
-  });
+    // Call with click
+    canvas.addEventListener("mouseup", function(e){
+      draw = false;
+    });
 
 
-  // Call with SEND button
-  $('#send').on('click',function(e){
-      var form = $(this).parents('form');
-      var src = canvas.toDataURL('image/png');
-      $('#img-src').val(src);
-      form.submit();
-  });
+    // Call with SEND button
+    $('#send').on('click',function(e){
+        var form = $(this).parents('form');
+        var src = canvas.toDataURL('image/png');
+        $('#img-src').val(src);
+        form.submit();
+    });
   </script>
 {% endblock extrajs %}
