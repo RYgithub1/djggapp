@@ -1,11 +1,10 @@
-{% extends 'mnist/mniatbase.html' %}
+{% extends 'mnist/mnistbase.html' %}
 
 
 
 {% block content %}
-  {% csrf_token %}
-
   <form action="" method="POST" enctype='multipart/form-data'>
+    {% csrf_token %}
     <canvas id="canvas" width="140" height="140"></canvas>
     <hr>
     <input type="hidden" name="img-src" value="" id="img-src">
