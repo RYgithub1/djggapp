@@ -1,0 +1,14 @@
+{% load static %}
+
+
+
+<html>
+  <head>
+      <title>{% block title %}{% endblock title %}</title>
+  </head>
+
+  <body>
+      <img src="{% static 'images/sitelogo.png' %}" alt="Logo png image yade">
+      {% block content %}{% endblock content %}
+  </body>
+</html>
