@@ -10,9 +10,10 @@
 
 {% block content %}
   <h1>Articles for {{ year }}</h1>
-  {% for article in b %}
-      <p>{{ article.headline }}</p>
-      <p>By {{ article.reporter.full_name }}</p>
-      <p>Published {{ article.pub_date | date:"F j, Y" }}</p>
+  {% for one_article in article_list %}
+      <p>{{ one_article.headline }}</p>
+      <p>By {{ one_article.reporter.full_name }}</p>
+      <p>Published {{ one_article.pub_date | date:"F j, Y" }}</p>
+      <hr>
   {% endfor %}
 {% endblock content %}
