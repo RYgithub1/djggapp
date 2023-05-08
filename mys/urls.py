@@ -47,6 +47,8 @@ urlpatterns = [
     path('mnist/', include('mnist.urls')),
     ## NEWS APP
     path('news/', include('news.urls')),
+    ## POLLS APP
+    path('polls/', include('polls.urls')),
 
     ## Model data to a multiple html pages with urls/template without views function. Ex: Pages of Privacy/Contact/Invenstment.
     path('flatpage/', include('django.contrib.flatpages.urls')),
